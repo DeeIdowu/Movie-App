@@ -1,13 +1,16 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "description": "",
+  "description": "Full Stack Movie Applicaiton",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server/index.js",
+    "backend": "nodemon server/index.js",
+    "frontend": "npm run front --prefix client",
+    "dev": "concurrently \"npm run backend\" \"npm run start --prefix client\""
   },
   "keywords": [],
-  "author": "",
+  "author": "Dee Idowu",
   "license": "ISC",
   "devDependencies": {
     "bcrypt": "^4.0.1",
