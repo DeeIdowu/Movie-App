@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 
-const { Favourite } = require("../models/Favorite");
+const { Favourite } = require("../models/Favourite");
 
 const { auth } = require("../middleware/auth");
 
@@ -18,7 +18,7 @@ router.post("/favouriteNumber", (req, res) => {
 });
 
 router.post("/favourited", (req, res) => {
-  Favorite.find({
+  Favourite.find({
     movieId: req.body.movieId,
     userFrom: req.body.userFrom
   }).exec((err, subscribe) => {
@@ -36,16 +36,16 @@ router.post("/favourited", (req, res) => {
 router.post("/addToFavourite", (req, res) => {
   console.log(req.body);
 
-  const favorite = new Favorite(req.body);
+  const favourite = new Favourite(req.body);
 
-  favorite.save((err, doc) => {
+  favourite.save((err, doc) => {
     if (err) return res.json({ success: false, err });
     return res.status(200).json({ success: true });
   });
 });
 
 router.post("/removeFromFavourite", (req, res) => {
-  Favorite.findOneAndDelete({
+  Favourite.findOneAndDelete({
     movieId: req.body.movieId,
     userFrom: req.body.userFrom
   }).exec((err, doc) => {
@@ -56,9 +56,9 @@ router.post("/removeFromFavourite", (req, res) => {
 
 router.post("/getFavouredMovie", (req, res) => {
   //Need to find all of the Users that I am subscribing to From Subscriber Collection
-  Favorite.find({ userFrom: req.body.userFrom }).exec((err, favorites) => {
+  Favourite.find({ userFrom: req.body.userFrom }).exec((err, favourites) => {
     if (err) return res.status(400).send(err);
-    return res.status(200).json({ success: true, favorites });
+    return res.status(200).json({ success: true, favourites });
   });
 });
 
