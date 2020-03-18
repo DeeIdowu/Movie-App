@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Typography, Popover, Button } from "antd";
 import axios from "axios";
-import "./favorite.css";
+import "./favourite.css";
 import { useSelector } from "react-redux";
 import { IMAGE_BASE_URL, POSTER_SIZE } from "../../Config";
 
@@ -15,14 +15,14 @@ function FavouritePage() {
   let variable = { userFrom: localStorage.getItem("userId") };
 
   useEffect(() => {
-    fetchFavoredMovie();
+    fetchFavouredMovie();
   }, []);
 
-  const fetchFavoredMovie = () => {
+  const fetchFavouredMovie = () => {
     axios.post("/api/favourite/getFavouredMovie", variable).then(response => {
       if (response.data.success) {
         console.log(response.data.favourites);
-        setFavorites(response.data.favourites);
+        setFavourites(response.data.favourites);
         setLoading(false);
       } else {
         alert("Failed to get subscription videos");
