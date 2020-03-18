@@ -23,6 +23,7 @@
     "socket.io": "^2.3.0"
   },
   "dependencies": {
+    "@ant-design/icons": "4.0.0",
     "concurrently": "^5.1.0",
     "nodemon": "^2.0.2"
   }
