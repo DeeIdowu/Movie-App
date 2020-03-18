@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import LeftMenu from "./Sections/LeftMenu";
 import RightMenu from "./Sections/RightMenu";
+import {AlignRightOutlined} from '@ant-design/icons';
 import { Drawer, Button } from "antd";
 import "./Sections/Navbar.css";
 const Logo = require("../../../assets/images/Logo.png");
@@ -42,7 +43,7 @@ function NavBar() {
           type="primary"
           onClick={showDrawer}
         >
-          <Icon type="align-right" />
+          <AlignRightOutlined />
         </Button>
         <Drawer
           title="Basic Drawer"
