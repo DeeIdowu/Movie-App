@@ -8,7 +8,7 @@ import RegisterPage from "./views/RegisterPage/RegisterPage.js";
 import NavBar from "./views/NavBar/NavBar";
 import Footer from "./views/Footer/Footer";
 import MovieDetail from "./views/MovieDetail/MovieDetail";
-import FavouritePage from "./views/FavoritePage/FavouritePage";
+import FavouritePage from "./views/FavouritePage/FavouritePage";
 function App() {
   return (
     <Suspense fallback={<div>Loading...</div>}>
@@ -23,7 +23,7 @@ function App() {
             path="/movie/:movieId"
             component={Auth(MovieDetail, null)}
           />
-          <Route exact path="/favorite" component={Auth(FavouritePage, null)} />
+          <Route exact path="/favourite" component={Auth(FavouritePage, null)} />
         </Switch>
       </div>
       <Footer />
