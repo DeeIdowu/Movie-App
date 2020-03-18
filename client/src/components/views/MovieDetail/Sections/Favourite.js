@@ -33,8 +33,8 @@ function Favourite(props) {
         .post("/api/favourite/removeFromFavourite", variables)
         .then(response => {
           if (response.data.success) {
-            setFavoriteNumber(FavouriteNumber - 1);
-            setFavorited(!Favourited);
+            setFavouriteNumber(FavouriteNumber - 1);
+            setFavourited(!Favourited);
           } else {
             alert("Failed to Remove From Favourite");
           }
@@ -44,8 +44,8 @@ function Favourite(props) {
 
       axios.post("/api/favourite/addToFavourite", variables).then(response => {
         if (response.data.success) {
-          setFavoriteNumber(FavouriteNumber + 1);
-          setFavorited(!Favourited);
+          setFavouriteNumber(FavouriteNumber + 1);
+          setFavourited(!Favourited);
         } else {
           alert("Failed to Add To Favourite");
         }
