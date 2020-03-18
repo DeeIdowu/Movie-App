@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { withRouter } from "react-router-dom";
-import { loginUser } from "../../../_actions/user_actions";
+import { loginUser } from "../../../actions/user_actions";
 import { Formik } from "formik";
 import * as Yup from "yup";
 import { Form, Input, Button, Checkbox, Typography } from "antd";
+import { UserOutlined, LockOutlined } from '@ant-design/icons';
 import "antd/dist/antd.css";
 import { useDispatch } from "react-redux";
 
@@ -89,7 +90,7 @@ function LoginPage(props) {
                 <Input
                   id="email"
                   prefix={
-                    <Icon type="user" style={{ color: "rgba(0,0,0,.25)" }} />
+                    <UserOutlined style={{ color: "rgba(0,0,0,.25)" }} />
                   }
                   placeholder="Enter your email"
                   type="email"
@@ -111,7 +112,7 @@ function LoginPage(props) {
                 <Input
                   id="password"
                   prefix={
-                    <Icon type="lock" style={{ color: "rgba(0,0,0,.25)" }} />
+                    <LockOutlined  style={{ color: "rgba(0,0,0,.25)" }} />
                   }
                   placeholder="Enter your password"
                   type="password"
