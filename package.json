@@ -13,7 +13,7 @@
   "author": "Dee Idowu",
   "license": "ISC",
   "devDependencies": {
-    "bcrypt": "^4.0.1",
+    "bcrypt": "^5.0.0",
     "body-parser": "^1.19.0",
     "cookie-parser": "^1.4.4",
     "express": "^4.17.1",
